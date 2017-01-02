@@ -1,0 +1,2 @@
+polite=8
+humor=2
