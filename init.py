@@ -34,11 +34,11 @@ def init():
     decoder.set_keyphrase('wakeup', WAKE_UP_WORD)
     decoder.set_search('wakeup')
     p = pyaudio.PyAudio()
-    #start()
+    start()
     Open=True
     global r
     r = sr.Recognizer()
-    #r.recognize_google(LANG_4CODE)
+    r.recognize_google(LANG_4CODE)
     while (Open):
     	Open=listen_keyword()
 
@@ -56,7 +56,7 @@ def listen_keyword():
     while True:
         buf = stream.read(1024)
         decoder.process_raw(buf, False, False)
-	print (decoder.hyp() and decoder.hyp().hypstr)
+	#print (decoder.hyp() and decoder.hyp().hypstr)
         if decoder.hyp() and decoder.hyp().hypstr == WAKE_UP_WORD:
 	    flag=start()
 	    decoder.end_utt()

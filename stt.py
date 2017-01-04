@@ -1,6 +1,7 @@
 import speech_recognition as sr
-
+import os
 def active_listen():
+
     r = sr.Recognizer()
     with sr.Microphone() as src:
     	audio = r.listen(src)
@@ -8,7 +9,7 @@ def active_listen():
     msg = ''
     try:
         msg = r.recognize_google(audio) 
-	print (msg)
+	print (msg.lower())
     #except sr.UnknownValueError:
     #    print("Google Speech Recognition could not understand audio")
     #except sr.RequestError as e:
@@ -16,7 +17,7 @@ def active_listen():
     #except:
     #    print("Unknown exception occurred!")
     finally:
-        return msg
+        return msg.lower()
 
 def active_listen_2():
     r = sr.Recognizer()
@@ -26,7 +27,7 @@ def active_listen_2():
     msg = ''
     try:
         msg = r.recognize_google(audio) 
-	print (msg)
+	print (msg.lower())
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
@@ -34,7 +35,7 @@ def active_listen_2():
     except:
         print("Unknown exception occurred!")
     finally:
-        return msg
+        return msg.lower()
 
 if __name__=="__main__":
 	active_listen_2()
