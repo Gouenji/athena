@@ -1,5 +1,5 @@
 import init
-def jarvis():
+def athena():
 	print("starting")
 	init.init()
 	print ("Exiting")
